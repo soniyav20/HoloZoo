@@ -1,6 +1,7 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
+import 'package:holo_zoo/views/onboarding_page.dart';
 
 class SplashScreen extends StatefulWidget {
   const SplashScreen({Key? key}) : super(key: key);
@@ -23,12 +24,12 @@ class _SplashScreenState extends State<SplashScreen>
     Timer(
       const Duration(seconds: 2),
       () async {
-        // Navigator.pushReplacement(
-        //   context,
-        //   MaterialPageRoute(
-        //     builder: (_) => const OnBoarding(),
-        //   ),
-        // );
+        Navigator.pushReplacement(
+          context,
+          MaterialPageRoute(
+            builder: (_) => const OnBoarding(),
+          ),
+        );
       },
     );
     _animationController.forward();

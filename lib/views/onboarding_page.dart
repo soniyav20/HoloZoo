@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:holo_zoo/views/home_page.dart';
 import 'package:holo_zoo/views/widgets/gradient_button.dart';
 import 'package:holo_zoo/views/widgets/text_box.dart';
 
@@ -46,7 +47,7 @@ class _OnBoardingState extends State<OnBoarding> {
                   weight: FontWeight.w600,
                 ),
                 SizedBox(
-                  height: 24,
+                  height: MediaQuery.of(context).size.height / 25,
                 ),
               ],
             ),
@@ -57,7 +58,14 @@ class _OnBoardingState extends State<OnBoarding> {
         padding: const EdgeInsets.only(bottom: 16.0),
         child: GradientButton(
           text: "Get Started",
-          onPressed: () {},
+          onPressed: () {
+            Navigator.pushReplacement(
+              context,
+              MaterialPageRoute(
+                builder: (_) => const HomePage(),
+              ),
+            );
+          },
           color: Colors.black,
           weight: FontWeight.w600,
           size: 20,

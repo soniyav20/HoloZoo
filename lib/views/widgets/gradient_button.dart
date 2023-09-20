@@ -22,21 +22,24 @@ class GradientButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-        width: width,
-        height: height,
-        decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(30),
-            gradient: LinearGradient(
-              colors: [Color(0xff438875), Color(0xff99F2C8)],
-            )),
-        child: Center(
-          child: AppTextBox(
-            text: text,
-            size: size ?? null,
-            color: color ?? null,
-            weight: weight ?? null,
-          ),
-        ));
+    return InkWell(
+      onTap: onPressed,
+      child: Container(
+          width: width,
+          height: height,
+          decoration: BoxDecoration(
+              borderRadius: BorderRadius.circular(30),
+              gradient: LinearGradient(
+                colors: [Color(0xff438875), Color(0xff99F2C8)],
+              )),
+          child: Center(
+            child: AppTextBox(
+              text: text,
+              size: size ?? null,
+              color: color ?? null,
+              weight: weight ?? null,
+            ),
+          )),
+    );
   }
 }
