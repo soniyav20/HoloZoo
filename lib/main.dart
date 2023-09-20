@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:holo_zoo/views/splash_screen.dart';
+import 'package:holo_zoo/views/onboarding_page.dart';
 
 void main() {
   runApp(const MyApp());
@@ -12,8 +12,8 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'HoloZoo',
-      theme: ThemeData(),
-      home: SplashScreen(),
+      theme: ThemeData(fontFamily: 'Poppins', brightness: Brightness.dark),
+      home: OnBoarding(),
     );
   }
 }
