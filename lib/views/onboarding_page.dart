@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:holo_zoo/views/home_page.dart';
+import 'package:holo_zoo/views/BottomNavPage.dart';
 import 'package:holo_zoo/views/widgets/gradient_button.dart';
 import 'package:holo_zoo/views/widgets/text_box.dart';
 
@@ -62,7 +62,7 @@ class _OnBoardingState extends State<OnBoarding> {
             Navigator.pushReplacement(
               context,
               MaterialPageRoute(
-                builder: (_) => const HomePage(),
+                builder: (_) => BottomNavPage(),
               ),
             );
           },
