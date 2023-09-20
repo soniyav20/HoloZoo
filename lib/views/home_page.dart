@@ -60,6 +60,7 @@ class _HomePageState extends State<HomePage> {
                             padding:
                                 const EdgeInsets.symmetric(horizontal: 16.0),
                             child: TextField(
+                              style: TextStyle(color: Colors.black),
                               cursorColor: Colors.black87,
                               decoration: InputDecoration(
                                   border: InputBorder.none,

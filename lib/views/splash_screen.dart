@@ -13,6 +13,7 @@ class SplashScreen extends StatefulWidget {
 class _SplashScreenState extends State<SplashScreen>
     with SingleTickerProviderStateMixin {
   late AnimationController _animationController;
+  late Animation<double> _translateAnimation;
 
   @override
   void initState() {
@@ -21,8 +22,14 @@ class _SplashScreenState extends State<SplashScreen>
       vsync: this,
       duration: const Duration(milliseconds: 2000),
     );
+    _translateAnimation = Tween<double>(begin: 0, end: 1).animate(
+      CurvedAnimation(
+        parent: _animationController,
+        curve: Curves.easeIn,
+      ),
+    );
     Timer(
-      const Duration(seconds: 2),
+      const Duration(seconds: 3),
       () async {
         Navigator.pushReplacement(
           context,
@@ -45,18 +52,21 @@ class _SplashScreenState extends State<SplashScreen>
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.black,
-      body: Center(
-        child: ShaderMask(
-          shaderCallback: (bounds) => LinearGradient(
-            colors: [Color(0xff438875), Color(0xff99F2C8)],
-          ).createShader(bounds),
-          child: Text(
-            'HoloZoo',
-            style: TextStyle(
-              fontSize: 40.0,
-              letterSpacing: 1,
-              fontWeight: FontWeight.bold,
-              color: Colors.white,
+      body: FadeTransition(
+        opacity: _translateAnimation,
+        child: Center(
+          child: ShaderMask(
+            shaderCallback: (bounds) => LinearGradient(
+              colors: [Color(0xff438875), Color(0xff99F2C8)],
+            ).createShader(bounds),
+            child: Text(
+              'HoloZoo',
+              style: TextStyle(
+                fontSize: 40.0,
+                letterSpacing: 1,
+                fontWeight: FontWeight.bold,
+                color: Colors.white,
+              ),
             ),
           ),
         ),

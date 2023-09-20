@@ -20,6 +20,7 @@ class _BottomNavPageState extends State<BottomNavPage> {
     return Scaffold(
       body: _pages[_currentIndex], // Show the selected page
       bottomNavigationBar: BottomNavigationBar(
+        elevation: 10,
         selectedFontSize: 0,
         selectedIconTheme: IconThemeData(size: 32),
         unselectedIconTheme: IconThemeData(size: 32),
@@ -42,7 +43,7 @@ class _BottomNavPageState extends State<BottomNavPage> {
             label: 'Settings',
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.save),
+            icon: Icon(Icons.bookmark_border_outlined),
             label: 'Saved',
           ),
         ],
