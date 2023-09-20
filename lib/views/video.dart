@@ -57,5 +57,9 @@ class _VideoPlayerPageState extends State<VideoPlayerPage> {
     super.dispose();
     _videoController.dispose();
     _chewieController.dispose();
+    SystemChrome.setPreferredOrientations([
+      DeviceOrientation.portraitUp,
+      DeviceOrientation.portraitDown,
+    ]);
   }
 }
