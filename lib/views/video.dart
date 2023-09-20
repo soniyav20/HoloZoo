@@ -42,6 +42,7 @@ class _VideoPlayerPageState extends State<VideoPlayerPage> {
     return MediaQuery(
       data: MediaQuery.of(context).copyWith(),
       child: Scaffold(
+        backgroundColor: Colors.black,
         body: SizedBox.expand(
           child: Chewie(
             controller: _chewieController,
