@@ -29,6 +29,7 @@ class _VideoPlayerPageState extends State<VideoPlayerPage> {
     _chewieController = ChewieController(
       videoPlayerController: _videoController,
       autoPlay: true,
+      aspectRatio: 16/9,
       looping: true,
       customControls: Container(),
     );
@@ -55,6 +56,21 @@ class _VideoPlayerPageState extends State<VideoPlayerPage> {
   @override
   void dispose() {
     super.dispose();
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     _videoController.dispose();
     _chewieController.dispose();
     SystemChrome.setPreferredOrientations([
