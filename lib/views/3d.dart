@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_cube/flutter_cube.dart';
+import 'package:model_viewer_plus/model_viewer_plus.dart';
 
 class ThreeD extends StatefulWidget {
   @override
@@ -10,34 +11,21 @@ class _ThreeDState extends State<ThreeD> {
   late Object astro;
   @override
   void initState() {
-    astro = Object(fileName: "assets/Heart.obj");
+    astro = Object(fileName: "assets/sloth.glb");
     super.initState();
   }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      extendBodyBehindAppBar: true,
-      backgroundColor: Colors.black,
-      body: Container(
-        // providing linear gradient to the
-        // background with two colours
-
-        child: Column(
-          children: [
-            SizedBox(
-              height: 100,
-            ),
-            Expanded(
-              child: Cube(
-                onSceneCreated: (Scene scene) {
-                  scene.world.add(astro);
-                  scene.camera.zoom = 10;
-                },
-              ),
-            ),
-          ],
-        ),
+      appBar: AppBar(title: const Text('Model Viewer')),
+      body: ModelViewer(
+        backgroundColor: Colors.teal,
+        src: 'assets/sloth.glb',
+        alt: "A 3D model of an table soccer",
+        autoPlay: true,
+        autoRotate: true,
+        cameraControls: true,
       ),
     );
   }
