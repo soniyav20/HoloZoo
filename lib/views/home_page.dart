@@ -164,17 +164,21 @@ class _HomePageState extends State<HomePage> {
                           width: 140,
                           height: 84,
                           decoration: BoxDecoration(
-                              boxShadow: [BoxShadow(color: Colors.white,offset: const Offset(
-                                1.0,
-                                1.0,
-                              ),
-                                blurRadius: 10.0,
-                                spreadRadius: 2.0,)],
+                              boxShadow: [
+                                BoxShadow(
+                                  color: Colors.white,
+                                  offset: const Offset(
+                                    1.0,
+                                    1.0,
+                                  ),
+                                  blurRadius: 10.0,
+                                  spreadRadius: 2.0,
+                                )
+                              ],
                               borderRadius: BorderRadius.circular(10),
                               color: Colors.white,
-                              image: DecorationImage(image: AssetImage('assets/kingfisher.jpeg'))
-                          ),
-
+                              image: DecorationImage(
+                                  image: AssetImage('assets/kingfisher.jpeg'))),
                         ),
                       ),
                     ],
@@ -217,20 +221,61 @@ class _HomePageState extends State<HomePage> {
                           width: 140,
                           height: 84,
                           decoration: BoxDecoration(
-boxShadow:   [BoxShadow(color: Colors.white,offset: const Offset(
-    1.0,
-    1.0,
-    ),
-    blurRadius: 10.0,
-    spreadRadius: 2.0,)],
-                            borderRadius: BorderRadius.circular(10),
-                            color: Colors.white,
-                            image: DecorationImage(image: AssetImage('assets/dino.jpeg'))
-                          ),
-
+                              boxShadow: [
+                                BoxShadow(
+                                  color: Colors.white,
+                                  offset: const Offset(
+                                    1.0,
+                                    1.0,
+                                  ),
+                                  blurRadius: 10.0,
+                                  spreadRadius: 2.0,
+                                )
+                              ],
+                              borderRadius: BorderRadius.circular(10),
+                              color: Colors.white,
+                              image: DecorationImage(
+                                  image: AssetImage('assets/dino.jpeg'))),
                         ),
                       ),
                     ],
+                  ),
+                  Topic(text: "BIOLOGY", icon: Icon(Icons.energy_savings_leaf)),
+                  InkWell(
+                    onTap: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (_) => VideoPlayerPage(
+                              videoUrl:
+                                  "https://siva-pythonpirates.github.io/Heart.mp4"),
+                        ),
+                      );
+                    },
+                    child: Padding(
+                      padding: const EdgeInsets.all(24.0),
+                      child: Container(
+                        width: MediaQuery.of(context).size.width / 0.5,
+                        height: 200,
+                        decoration: BoxDecoration(
+                            boxShadow: [
+                              BoxShadow(
+                                color: Colors.white,
+                                offset: const Offset(
+                                  0.5,
+                                  0.5,
+                                ),
+                                blurRadius: 10.0,
+                                spreadRadius: 2.0,
+                              )
+                            ],
+                            borderRadius: BorderRadius.circular(10),
+                            color: Colors.white,
+                            image: DecorationImage(
+                                image: AssetImage('assets/heart.jpg'),
+                                fit: BoxFit.cover)),
+                      ),
+                    ),
                   ),
                 ],
               ),
