@@ -52,8 +52,9 @@ class _VideoPlayerPageState extends State<VideoPlayerPage> {
       ),
     );
   }
-
   @override
+
+
   void dispose() {
     super.dispose();
 

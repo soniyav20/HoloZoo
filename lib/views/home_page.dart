@@ -161,11 +161,20 @@ class _HomePageState extends State<HomePage> {
                           );
                         },
                         child: Container(
-                          child: Center(
-                            child: Image(
-                              image: AssetImage('assets/parrot.png'),
-                            ),
+                          width: 140,
+                          height: 84,
+                          decoration: BoxDecoration(
+                              boxShadow: [BoxShadow(color: Colors.white,offset: const Offset(
+                                1.0,
+                                1.0,
+                              ),
+                                blurRadius: 10.0,
+                                spreadRadius: 2.0,)],
+                              borderRadius: BorderRadius.circular(10),
+                              color: Colors.white,
+                              image: DecorationImage(image: AssetImage('assets/kingfisher.jpeg'))
                           ),
+
                         ),
                       ),
                     ],
@@ -205,11 +214,20 @@ class _HomePageState extends State<HomePage> {
                           );
                         },
                         child: Container(
-                          child: Center(
-                            child: Image(
-                              image: AssetImage('assets/elephant.png'),
-                            ),
+                          width: 140,
+                          height: 84,
+                          decoration: BoxDecoration(
+boxShadow:   [BoxShadow(color: Colors.white,offset: const Offset(
+    1.0,
+    1.0,
+    ),
+    blurRadius: 10.0,
+    spreadRadius: 2.0,)],
+                            borderRadius: BorderRadius.circular(10),
+                            color: Colors.white,
+                            image: DecorationImage(image: AssetImage('assets/dino.jpeg'))
                           ),
+
                         ),
                       ),
                     ],
