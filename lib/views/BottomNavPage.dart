@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:holo_zoo/views/3d.dart';
 import 'package:holo_zoo/views/home_page.dart';
+
+import '3d_list.dart';
 
 class BottomNavPage extends StatefulWidget {
   @override
@@ -10,7 +11,7 @@ class BottomNavPage extends StatefulWidget {
 class _BottomNavPageState extends State<BottomNavPage> {
   int _currentIndex = 0;
 
-  final List<Widget> _pages = [HomePage(), SettingsScreen(), ThreeD()];
+  final List<Widget> _pages = [HomePage(), SettingsScreen(), ModelsPage()];
 
   @override
   Widget build(BuildContext context) {

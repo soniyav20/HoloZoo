@@ -1,15 +1,29 @@
 import 'package:flutter/material.dart';
 import 'package:webview_flutter/webview_flutter.dart';
+import 'package:flutter/services.dart';
 
-class ThreeD extends StatefulWidget {
+class WebViewPage extends StatefulWidget {
+  final String htmlContent;
+
+  WebViewPage({required this.htmlContent});
+
   @override
-  _ThreeDState createState() => _ThreeDState();
+  _WebViewPageState createState() => _WebViewPageState();
 }
 
-class _ThreeDState extends State<ThreeD> {
+class _WebViewPageState extends State<WebViewPage> {
+  // late WebViewController _controller;
+
   @override
   void initState() {
     super.initState();
+    SystemChrome.setPreferredOrientations([DeviceOrientation.landscapeLeft, DeviceOrientation.landscapeRight]);
+  }
+
+  @override
+  void dispose() {
+    SystemChrome.setPreferredOrientations([DeviceOrientation.portraitUp]);
+    super.dispose();
   }
 
   @override
@@ -33,17 +47,20 @@ class _ThreeDState extends State<ThreeD> {
           },
         ),
       )
-      ..loadRequest(Uri.dataFromString(
-          '<html><body><iframe id="view360Iframe" width="100%" height="100%" scrolling="0" src="https://sketchfab.com/models/8d913bda48f84217902e6829982c494f/embed?ui_infos=0&amp;ui_watermark=0&amp;ui_help=0&amp;ui_settings=0&amp;ui_inspector=0&amp;ui_annotations=0&amp;ui_stop=0&amp;ui_vr=0&amp;preload=1&amp;autostart=1&amp;ui_hint=2&amp;autospin=0.2"></iframe></body></html>',
-          mimeType: 'text/html'));
+      ..loadRequest(
+        Uri.dataFromString(
+          widget.htmlContent,
+          mimeType: 'text/html',
+        ),
+      );
     return Scaffold(
-        extendBodyBehindAppBar: true,
-        backgroundColor: Colors.black,
-        body: Center(
-          child: Container(
-              width: MediaQuery.of(context).size.width,
-              height: MediaQuery.of(context).size.height,
-              child: WebViewWidget(controller: controller)),
-        ));
+      body: Center(
+        child: Container(
+          width: MediaQuery.of(context).size.width,
+          height: MediaQuery.of(context).size.height,
+          child: WebViewWidget(controller: controller),
+        ),
+      ),
+    );
   }
 }
