@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:holo_zoo/views/home_page.dart';
 
+import '3d_list.dart';
+
 class BottomNavPage extends StatefulWidget {
   @override
   _BottomNavPageState createState() => _BottomNavPageState();
@@ -9,17 +11,14 @@ class BottomNavPage extends StatefulWidget {
 class _BottomNavPageState extends State<BottomNavPage> {
   int _currentIndex = 0;
 
-  final List<Widget> _pages = [
-    HomePage(),
-    SettingsScreen(),
-    SavedScreen(),
-  ];
+  final List<Widget> _pages = [HomePage(), SettingsScreen(), ModelsPage()];
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: _pages[_currentIndex], // Show the selected page
       bottomNavigationBar: BottomNavigationBar(
+        elevation: 10,
         selectedFontSize: 0,
         selectedIconTheme: IconThemeData(size: 32),
         unselectedIconTheme: IconThemeData(size: 32),
@@ -42,7 +41,7 @@ class _BottomNavPageState extends State<BottomNavPage> {
             label: 'Settings',
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.save),
+            icon: Icon(Icons.bookmark_border_outlined),
             label: 'Saved',
           ),
         ],
